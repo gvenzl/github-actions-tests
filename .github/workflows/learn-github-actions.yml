@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     services:
       image: gvenzl/oracle-xe:11-slim
+      env:
+        ORACLE_RANDOM_PASSWORD true
       ports:
         - 1521:1521
-      env:
-        ORACLE_RANDOM_PASSWORD=true
     steps:
       - uses: actions/checkout@v2
       - run: docker ps -a
