@@ -3,6 +3,12 @@ on: [push]
 jobs:
   run-stuff:
     runs-on: ubuntu-latest
+    services:
+      image: gvenzl/oracle-xe:11-slim
+      ports:
+        - 1521:1521
+      env:
+        ORACLE_RANDOM_PASSWORD=true
     steps:
       - uses: actions/checkout@v2
-      - run: docker version
+      - run: docker ps -a
