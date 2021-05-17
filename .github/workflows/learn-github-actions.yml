@@ -1,10 +1,9 @@
-name: learn-github-actions
+name: Run SQL test
 on: [push]
 jobs:
-  check-bats-version:
+  run-stuff:
     runs-on: ubuntu-latest
+    container: gvenzl/oracle-xe:11-slim
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - run: docker ps -a
