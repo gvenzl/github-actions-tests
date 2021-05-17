@@ -16,7 +16,7 @@ jobs:
         ports:
           - 1521:1521
         options: >-
-          --health-cmd "\${ORACLE_BASE}/healthcheck.sh >/dev/null || exit 1"
+          --health-cmd healthcheck.sh
           --health-interval 20s
           --health-timeout 10s
           --health-retries 10
