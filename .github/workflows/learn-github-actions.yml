@@ -15,7 +15,7 @@ jobs:
           ORACLE_RANDOM_PASSWORD: true
         ports:
           - 1521:1521
-         options: >-
+        options: >-
           --health-cmd="\${ORACLE_BASE}/healthcheck.sh >/dev/null || exit 1"
           --health-interval 20s
           --health-timeout 10s
