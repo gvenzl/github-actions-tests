@@ -15,6 +15,11 @@ jobs:
           ORACLE_RANDOM_PASSWORD: true
         ports:
           - 1521:1521
+         options: >-
+          --health-cmd="\${ORACLE_BASE}/healthcheck.sh >/dev/null || exit 1"
+          --health-interval 20s
+          --health-timeout 10s
+          --health-retries 10
     steps:
       - uses: actions/checkout@v2
       - run: docker ps -a
