@@ -3,7 +3,6 @@ on: [push]
 jobs:
   run-stuff:
     runs-on: ubuntu-latest
-    container: gvenzl/oracle-xe:11-slim
     steps:
       - uses: actions/checkout@v2
-      - run: docker ps -a
+      - run: docker version
