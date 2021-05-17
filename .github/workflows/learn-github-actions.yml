@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-
-      image: gvenzl/oracle-xe:11-slim
-
-      env:
+      oracle:
+        image: gvenzl/oracle-xe:11-slim
+        env:
+          ORACLE_RANDOM_PASSWORD: true
         ports:
           - 1521:1521
     steps:
