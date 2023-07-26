@@ -1,0 +1,17 @@
+name: Test with Oracle DB
+on: [push, pull_request]
+jobs:
+  oracle-db-free:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gvenzl/setup-oracle-free@v1
+        with:
+          container-name: oracledb #Default
+          container-runtime: podman #default --> docker
+          tag: slim
+          app-user: test
+          app-user-password: test
+      - name: Verify
+        run: |
+          echo "SELECT 'Hello there!';" | podman exec -i oracledb sqlplus test/test@localhost/freepdb1
