@@ -20,7 +20,7 @@ jobs:
       - name: Install Oracle Python Driver
         run: python -m pip install oracledb
 
-      - name: Setup test database
+      - name: Setup CI/CD database
         run: |
           podman run -d --name oracle \
                      -p 1521:1521 \
