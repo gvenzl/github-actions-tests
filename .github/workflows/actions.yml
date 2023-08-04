@@ -38,6 +38,6 @@ jobs:
           export APP_USER=${{ secrets.AppUser }}
           export APP_USER_PWD=${{ secrets.AppUserPwd }}
           export DB_HOST=localhost
-          export DB_NAME==${{ secrets.DBName }}
+          export DB_NAME=${{ secrets.DBName }}
           cd src/test
           python load_tests.py
