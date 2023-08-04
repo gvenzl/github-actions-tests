@@ -37,8 +37,9 @@ class TestDBLayer(unittest.TestCase):
                 c.execute("DROP TABLE foo")
         print()
 
-    def test_select_data(self):
-        print("TEST SELECT data")
+    def test_insert_and_select_data(self):
+        print("TEST INSERT and SELECT data...")
+        print()
         rows = 10
         with self.get_conn() as conn:
             with conn.cursor() as c:
