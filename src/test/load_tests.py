@@ -42,7 +42,7 @@ class TestDBLayer(unittest.TestCase):
                 c.execute("CREATE TABLE test (id NUMBER)")
 
                 print("Load data into table...")
-                for i in range(1, rows):
+                for i in range(0, rows):
                     c.execute("INSERT INTO test (id) VALUES (:id)", (i,))
                     print("Row loaded.")
 
