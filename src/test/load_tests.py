@@ -17,7 +17,7 @@ class TestDBLayer(unittest.TestCase):
             self.conn = o.connect(
                             user=self.APP_USER,
                             password=self.APP_USER_PWD,
-                            dns=self.DB_HOST+"/"+self.DB_NAME
+                            dsn=self.DB_HOST+"/"+self.DB_NAME
             )
         return self.conn
 
