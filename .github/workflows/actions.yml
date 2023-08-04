@@ -36,5 +36,5 @@ jobs:
       - name: Run Oracle tests on version ${{ matrix.python-version }}
         run: |
           export PYTHONPATH=$PWD/src/python
-          cd src/test/python
+          cd src/test
           python load_tests.py
