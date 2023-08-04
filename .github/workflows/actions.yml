@@ -27,7 +27,6 @@ jobs:
                      -e ORACLE_RANDOM_PASSWORD=y \
                      -e APP_USER=${{ secrets.AppUser }} \
                      -e APP_USER_PASSWORD=${{ secrets.AppUserPwd }} \
-                     -e ORACLE_DATABASE=${{ secrets.DBName }} \
                      gvenzl/oracle-free:slim
           while [[ $(podman logs oracle 2>&1 | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
             sleep 1;
