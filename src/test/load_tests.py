@@ -22,6 +22,8 @@ class TestDBLayer(unittest.TestCase):
         return self.conn
 
     def test_create_table(self):
+        print("TEST CREATE TABLE...")
+        print()
         with self.get_conn() as conn:
             with conn.cursor() as c:
                 print("Create table")
@@ -33,8 +35,10 @@ class TestDBLayer(unittest.TestCase):
 
                 print("Drop table")
                 c.execute("DROP TABLE foo")
+        print()
 
     def test_select_data(self):
+        print("TEST SELECT data")
         rows = 10
         with self.get_conn() as conn:
             with conn.cursor() as c:
