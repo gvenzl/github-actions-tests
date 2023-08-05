@@ -6,7 +6,7 @@ import unittest
 class TestDBLayer(unittest.TestCase):
 
     APP_USER = ""
-    APP_USER_PWD = ""
+    APP_USER_PWD = " "
     DB_HOST = ""
     DB_NAME = ""
 
