@@ -1,4 +1,4 @@
-name: Oracle ADB load tests ⭕
+name: Oracle ADB load tests 🛠️
 on: [push, pull_request]
 jobs:
   oracle-adb-tests:
