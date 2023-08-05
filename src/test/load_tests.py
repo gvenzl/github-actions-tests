@@ -22,7 +22,7 @@ class TestDBLayer(unittest.TestCase):
         return self.conn
 
     def test_create_table(self):
-        print("TEST CREATE TABLE...")
+        print("TEST: CREATE TABLE...")
         print()
         with self.get_conn() as conn:
             with conn.cursor() as c:
@@ -35,10 +35,11 @@ class TestDBLayer(unittest.TestCase):
 
                 print("Drop table")
                 c.execute("DROP TABLE foo")
+        print("TEST complete.")
         print()
 
     def test_insert_and_select_data(self):
-        print("TEST INSERT and SELECT data...")
+        print("TEST: INSERT and SELECT data...")
         print()
         rows = 10
         with self.get_conn() as conn:
@@ -54,6 +55,8 @@ class TestDBLayer(unittest.TestCase):
                 print("Verify load.")
                 c.execute("SELECT COUNT(1) FROM test")
                 self.assertEqual(c.fetchone()[0], rows)
+        print("TEST complete.")
+        print()
 
 
 if __name__ == "__main__":
