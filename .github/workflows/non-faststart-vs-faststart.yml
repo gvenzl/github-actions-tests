@@ -1,0 +1,63 @@
+name: Tests non-faststart vs. faststart images 🚀
+on: [push, pull_request]
+jobs:
+  free-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FREE non-faststart 1
+        run: |
+          docker run -d --name oracle -e ORACLE_RANDOM_PASSWORD=y gvenzl/oracle-free:slim
+          while [[ $(docker logs oracle | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
+            sleep 1;
+          done;
+  free-2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FREE non-faststart 2
+        run: |
+          docker run -d --name oracle -e ORACLE_RANDOM_PASSWORD=y gvenzl/oracle-free:slim
+          while [[ $(docker logs oracle | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
+            sleep 1;
+          done;
+  free-3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FREE non-faststart 3
+        run: |
+          docker run -d --name oracle -e ORACLE_RANDOM_PASSWORD=y gvenzl/oracle-free:slim
+          while [[ $(docker logs oracle | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
+            sleep 1;
+          done;
+  free-faststart-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FREE faststart 1
+        run: |
+          docker run -d --name oracle -e ORACLE_RANDOM_PASSWORD=y gvenzl/oracle-free:slim-faststart
+          while [[ $(docker logs oracle | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
+            sleep 1;
+          done;
+  free-faststart-2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FREE faststart 2
+        run: |
+          docker run -d --name oracle -e ORACLE_RANDOM_PASSWORD=y gvenzl/oracle-free:slim-faststart
+          while [[ $(docker logs oracle | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
+            sleep 1;
+          done;
+  free-faststart-3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run FREE faststart 3
+        run: |
+          docker run -d --name oracle -e ORACLE_RANDOM_PASSWORD=y gvenzl/oracle-free:slim-faststart
+          while [[ $(docker logs oracle | grep -c "DATABASE IS READY TO USE") == 0 ]]; do
+            sleep 1;
+          done;
